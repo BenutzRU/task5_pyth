@@ -2,12 +2,12 @@ import calendar
 import re
 
 
-def numch(phone_number):
+def numch(phone_num):
 
-    phone_number_pattern = re.compile(r"^(?:\+7|7|8)\d{10}$")
+    ph_p = re.compile(r"^(?:\+7|7|8)\d{10}$")
 
 
-    if phone_number_pattern.match(phone_number) and len(phone_number) == 11 or len(phone_number) == 12:
+    if ph_p.match(phone_num) and len(phone_num) == 11 or len(phone_num) == 12:
         print("Телефон РУ региона.")
     else:
         print("Не РУ.")
@@ -20,7 +20,7 @@ numch(phone)
 
 
 
-def print_calendar(year, month):
+def cal(year, month):
 
     if not re.match("^\d+$", year) or not re.match("^\d+$", month):
         print("Error")
@@ -37,4 +37,4 @@ def print_calendar(year, month):
 
 year = input("Год: ")
 month = input("Месяц: ")
-print_calendar(year, month)
+cal(year, month)
